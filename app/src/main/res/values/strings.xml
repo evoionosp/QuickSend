@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">QuickSend</string>
+    <string name="hint_mobile_number">Mobile Number</string>
+
+    <string name="admob_app_id">ca-app-pub-3746797233831787~8636574555</string>
+    <string name="banner_ad_unit_id1">ca-app-pub-3746797233831787/2590040956</string>
+    <string name="banner_ad_unit_id2">ca-app-pub-3746797233831787/7020240559</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-3746797233831787/8496973758</string>
+    <string name="about">About</string>
+    <string name="share_app">Share App</string>
+    <string name="open_whatsapp">Open Whatsapp</string>
+    <string name="send">Send</string>
+    <string name="reminders">Reminders</string>
+    <string name="send_to">Send to :</string>
+    <string name="select_date">Select Date</string>
+    <string name="select_time">Select Time</string>
+
+</resources>

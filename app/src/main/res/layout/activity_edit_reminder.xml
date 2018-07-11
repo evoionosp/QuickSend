@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/fab_margin"
+    tools:context="com.devshubhpatel.quicksend.EditReminderActivity">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/card_title"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Reminder"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_marginTop="5dp"
+        android:hint="Title (e.g. John's Birthday)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="40"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/dateTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1">
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/datePickerInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/select_date"
+                app:maxDate="01/01/2050"
+                app:dateFormat="dd/MM/yyyy"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/timeTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <io.blackbox_vision.datetimepickeredittext.view.TimePickerInputEditText
+                android:id="@+id/timePickerInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/select_time"
+                app:timeFormat="hh:mm a" />
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            app:ccp_autoFormatNumber="true"
+            app:ccp_autoDetectCountry="true"
+            app:ccp_rememberLastSelection="true" />
+
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/et_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:ems="11"
+            android:hint="@string/hint_mobile_number"
+            android:inputType="phone"
+            android:textColor="@color/colorBlack" />
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <Button
+        android:id="@+id/btn_select_contact"
+        android:layout_gravity="right"
+        style="@style/MyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="Select form Contacts"
+        android:textSize="12sp"
+        />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:hint="Enter Message Here">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/et_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="80dp"
+            android:inputType="textMultiLine" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <com.nex3z.togglebuttongroup.SingleSelectToggleGroup
+
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/card_group_choices"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_height="wrap_content"
+        app:tbgCheckedButton="@+id/choice_normal"
+        app:tbgMarkerColor="@color/colorAccent"
+        app:tbgChildSpacing="@dimen/fab_margin">
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+
+            android:id="@+id/choice_silent"
+            android:layout_margin="5dp"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Silent"/>
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/choice_normal"
+            android:layout_margin="5dp"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Normal"/>
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/choice_high"
+            android:layout_margin="5dp"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="High"/>
+
+    </com.nex3z.togglebuttongroup.SingleSelectToggleGroup>
+
+
+    <android.support.v7.widget.ButtonBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorAccent"
+        android:text="Save"
+        android:layout_marginRight="5dp"
+        android:layout_weight="1"/>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_cancel"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+
+            android:layout_weight="1"/>
+    </android.support.v7.widget.ButtonBarLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_marginTop="5dp"
+        android:id="@+id/btn_delete"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorRed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Reminder"
+        android:visibility="gone" />
+
+
+</LinearLayout>
